@@ -1,13 +1,8 @@
-pub fn split_args(args: Vec<String>) -> (Vec<String>, Vec<String>) {
-    let mut files = Vec::new();
-    let mut opts = Vec::new();
+use std::path::PathBuf;
 
-    for s in args {
-        if s.starts_with("-") || s.starts_with("--") {
-            opts.push(s);
-        } else if !s.is_empty() {
-            files.push(s)
-        }
+pub fn is_source_valid(file: &PathBuf) -> Result<&PathBuf, String> {
+    match file.exists() {
+        true => Ok(file),
+        false => Err(format!("File doesn't exist: {:#?}", file.as_path())),
     }
-    (files, opts)
 }
