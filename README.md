@@ -1,3 +1,3 @@
 # mvr
 
-`mvr` is a `mv` clone, written in Rust, because I wanted to learn Rust.
+`mvr` is a partial `mv` clone, written in Rust, because I wanted to learn Rust.
